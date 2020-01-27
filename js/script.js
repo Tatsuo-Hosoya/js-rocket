@@ -1,3 +1,20 @@
+
+	var doCoolStuff= function (){
+	//getElementByIdは、任意のHTMLタグで指定したIDにマッチするドキュメント要素を取得するメソッドです。
+	//Element は Document の中にあるすべての要素オブジェクト 
+	//.classNameはクラス属性を取得するプロパティ
+	//currentClassNameは今現在のクラスの状態をさす。つまりページを開いた状態ではcoolクラスを指す。
+	var currentClassName = document.getElementById('cool').className;
+
+	if (currentClassName == 'cool') {
+	//class名がcool red になる
+		document.getElementById('cool').className ='cool red';
+	} else {
+		document.getElementById('cool').className ='cool';
+				
+}}
+
+
 var  sayMyName = function (name) {
 	alert('My name is'+name);
 }

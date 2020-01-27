@@ -1,0 +1,75 @@
+.left{
+	position: fixed;
+	background-color: aquamarine;
+	width: 50%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+.right{
+	position: fixed;
+	background-color: aliceblue;
+	width: 50%;
+	height: 100%;
+	top: 0;
+	right: 0;
+}
+
+.ground{
+	background-color: green;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 20px;
+}
+
+
+.rocket{
+	position: absolute;
+	left: 50%;
+	bottom: 20px;
+	width: 20px;
+	height: 100px;
+	background-color: blue;
+/*ロケットのスピード*/
+	transition: bottom 10000ms;
+}
+
+/*state1に戻った時にロケットの位置が最初の位置に戻る。*/
+/*CSSでは基本的に後に書いた要素が優先される*/
+body.body-state1 .rocket{
+	transition: none;
+}
+
+
+/*state3に移行すると同時にこのCSSの位置に向けてロケットが打ちあがる*/
+body.body-state3 .rocket,
+body.body-state4 .rocket{
+	bottom: 1000px;
+}
+/*表示されていない状態の要素のパターン*/
+/*これらはdiv要素によって作られている。下のボディ要素の一覧と合わせて表示と非表示のセットが作られている*/
+.state1,
+.state2,
+.state3,
+.state4,
+.state5{
+	display: none;
+}
+/*ページを開いたときに表示されている要素*/
+/*JSのchangeStateメソッドによりbodyクラスの中身の１から５のstateを入れ替えることで、ページの動きが行われる*/
+body.body-state1 .state1{display: block;}
+/*JSにより表示される動作*/
+body.body-state2 .state2{display: block;}
+body.body-state3 .state3{display: block;}
+body.body-state4 .state4{display: block;}
+body.body-state5 .state5{display: block;}
+
+a{
+
+}
+
+a.button{
+
+}
